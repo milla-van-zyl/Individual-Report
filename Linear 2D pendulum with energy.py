@@ -19,7 +19,7 @@ V0 = [1,0,0,0] # the initial condition [x0,vx0,y0,vy0]
 dt = 0.0002 # time step
 fig_dt = 0.01 # plotting interval 
 t0 = 0 # start ime
-t_end = 120.0 # end time
+t_end = 60.0 # end time
 
 # Function to compute total mechanical energy
 
@@ -57,9 +57,11 @@ if gamma == 0:
     plt.axhline(0, linestyle='--', color='blue', label = 'Zero reference')
     plt.ylabel(r'Relative energy error (%)', fontsize = 25)
     plt.legend(fontsize=22)
+    plt.title("Energy Conservation (Linear Model)", fontsize=25)
 else:
     plt.plot(t, E, 'r', linewidth=2)
     plt.ylabel('Total energy $E$ (J)', fontsize = 25)
+    plt.title("Energy Decay (Linear Model)", fontsize=25)
 
 plt.xlabel('Time $t$ (s)', fontsize=25)
 plt.tick_params(axis='both', which='major', labelsize=25)
